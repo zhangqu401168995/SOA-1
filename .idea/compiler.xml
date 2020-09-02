@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="soa-ware" />
+        <module name="renren-generator" />
+        <module name="soa-order" />
+        <module name="soa-member" />
+        <module name="soa-coupon" />
+        <module name="renren-fast" />
+        <module name="soa-product" />
+        <module name="configuration" />
+        <module name="soa-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="configuration" target="1.8" />
+      <module name="renren-fast" target="1.8" />
+      <module name="renren-generator" target="1.8" />
+      <module name="soa-common" target="1.8" />
+      <module name="soa-coupon" target="1.8" />
+      <module name="soa-member" target="1.8" />
+      <module name="soa-order" target="1.8" />
+      <module name="soa-product" target="1.8" />
+      <module name="SOA-Steam" target="1.8" />
+      <module name="soa-user-manage" target="1.8" />
+      <module name="soa-ware" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="configuration" options="-parameters" />
+      <module name="renren-fast" options="-parameters" />
+      <module name="renren-generator" options="-parameters" />
+      <module name="soa-coupon" options="-parameters" />
+      <module name="soa-member" options="-parameters" />
+      <module name="soa-order" options="-parameters" />
+      <module name="soa-product" options="-parameters" />
+      <module name="soa-user-manage" options="-parameters" />
+      <module name="soa-ware" options="-parameters" />
+    </option>
+  </component>
+</project>

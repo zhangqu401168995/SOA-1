@@ -16,6 +16,9 @@
         <module>soa-member</module>
         <module>soa-order</module>
         <module>soa-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>soa-common</module>
     </modules>
 
 
