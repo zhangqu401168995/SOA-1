@@ -4,6 +4,14 @@ spring:
     username: root
     password: root
     url: jdbc:mysql://localhost:3306/soa_sms?serverTimezone=UTC
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        namespace: 1
+  application:
+    name: coupon
+
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
@@ -13,3 +21,5 @@ mybatis-plus:
 
 server:
   port: 7000
+
+

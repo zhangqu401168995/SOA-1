@@ -4,7 +4,11 @@ spring:
     password: root
     url: jdbc:mysql://localhost:3306/soa_pms?serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
-
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+  application:
+    name: product
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   global-config:
@@ -12,4 +16,8 @@ mybatis-plus:
       id-type: auto
 
 server:
-  port: 10000
+  port: 12000
+logging:
+  level:
+    com.zhangqu.soa: debug
+

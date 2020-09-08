@@ -7,13 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="soa-ware" />
+        <module name="configuration" />
         <module name="renren-generator" />
-        <module name="soa-order" />
+        <module name="soa-gateway" />
         <module name="soa-member" />
         <module name="soa-coupon" />
         <module name="renren-fast" />
         <module name="soa-product" />
-        <module name="configuration" />
+        <module name="soa-order" />
         <module name="soa-common" />
       </profile>
     </annotationProcessing>
@@ -23,6 +24,7 @@
       <module name="renren-generator" target="1.8" />
       <module name="soa-common" target="1.8" />
       <module name="soa-coupon" target="1.8" />
+      <module name="soa-gateway" target="1.8" />
       <module name="soa-member" target="1.8" />
       <module name="soa-order" target="1.8" />
       <module name="soa-product" target="1.8" />
@@ -37,6 +39,7 @@
       <module name="renren-fast" options="-parameters" />
       <module name="renren-generator" options="-parameters" />
       <module name="soa-coupon" options="-parameters" />
+      <module name="soa-gateway" options="-parameters" />
       <module name="soa-member" options="-parameters" />
       <module name="soa-order" options="-parameters" />
       <module name="soa-product" options="-parameters" />

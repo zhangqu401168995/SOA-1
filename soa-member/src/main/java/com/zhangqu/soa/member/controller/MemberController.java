@@ -1,20 +1,15 @@
 package com.zhangqu.soa.member.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.zhangqu.soa.member.entity.MemberEntity;
-import com.zhangqu.soa.member.service.MemberService;
 import com.zhangqu.common.utils.PageUtils;
 import com.zhangqu.common.utils.R;
+import com.zhangqu.soa.member.entity.MemberEntity;
+import com.zhangqu.soa.member.feign.CouponFeignService;
+import com.zhangqu.soa.member.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
@@ -26,10 +21,21 @@ import com.zhangqu.common.utils.R;
  * @date 2020-09-02 14:31:41
  */
 @RestController
-@RequestMapping("member/member")
+@RequestMapping("member/members")
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    CouponFeignService couponFeignService;
+
+    @RequestMapping("/coupons")
+    public R test(){
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setNickname("zhangqu");
+        R memberCoupon = couponFeignService.memberCoupon();
+        return R.ok().put("member",memberEntity.getNickname()).put("coupon",memberCoupon.get("coupon"));
+    }
 
     /**
      * 列表

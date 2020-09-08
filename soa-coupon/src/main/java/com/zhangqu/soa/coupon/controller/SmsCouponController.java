@@ -5,6 +5,8 @@ import com.zhangqu.common.utils.R;
 import com.zhangqu.soa.coupon.entity.SmsCouponEntity;
 import com.zhangqu.soa.coupon.service.SmsCouponService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -19,11 +21,30 @@ import java.util.Map;
  * @email 401168995@qq.com
  * @date 2020-09-02 13:58:54
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupon/smsCoupon")
 public class SmsCouponController {
     @Autowired
     private SmsCouponService smsCouponService;
+
+    @Value("${coupon.user.name}")
+    private String name;
+
+    @RequestMapping("/test")
+    public R test(){
+        return R.ok().put("name",name);
+    }
+
+    /**
+     * 优惠券服务
+     */
+    @RequestMapping("/member/list")
+    public R memberCoupon(){
+        SmsCouponEntity smsCouponEntity = new SmsCouponEntity();
+        smsCouponEntity.setCouponName("满100减50");
+        return R.ok().put("coupon",Arrays.asList(smsCouponEntity.getCouponName()));
+    }
 
     /**
      * 列表
